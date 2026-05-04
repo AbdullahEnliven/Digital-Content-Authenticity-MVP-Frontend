@@ -565,38 +565,6 @@ function OverlayOverlayBlur3() {
   );
 }
 
-function Background8() {
-  return (
-    <div className="absolute bg-white content-stretch flex flex-col inset-0 items-center rounded-[24px]" data-name="Background">
-      <div className="pointer-events-none relative rounded-[24px] shadow-[0px_16px_32px_0px_rgba(15,23,36,0.08)] shrink-0 size-[76px]" data-name="Overlay+Shadow">
-        <div aria-hidden="true" className="absolute bg-[rgba(255,255,255,0)] inset-0 rounded-[24px]" />
-        <div className="absolute inset-0 rounded-[inherit] shadow-[inset_0px_1px_1px_0px_white,inset_0px_0px_0px_1px_rgba(15,23,36,0.06)]" />
-      </div>
-    </div>
-  );
-}
-
-function Container20() {
-  return (
-    <div className="col-1 gap-x-[6px] gap-y-[6px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[__13px_13px] relative row-1 self-center shrink-0 size-[32px]" data-name="Container">
-      <div className="bg-[#2563eb] col-1 rounded-[999px] row-1 shrink-0 size-[13px]" data-name="Background" />
-      <div className="bg-[#0f172a] col-2 rounded-[999px] row-1 shrink-0 size-[13px]" data-name="Background" />
-      <div className="bg-[#0f172a] col-1 rounded-[999px] row-2 shrink-0 size-[13px]" data-name="Background" />
-      <div className="bg-[#0f172a] col-2 rounded-[999px] row-2 shrink-0 size-[13px]" data-name="Background" />
-    </div>
-  );
-}
-
-function Container19() {
-  return (
-    <div className="-translate-x-1/2 absolute grid grid-cols-[_76px] grid-rows-[_76px] left-1/2 rounded-[24px] size-[76px] top-0" data-name="Container">
-      <div className="absolute inset-[-24px] rounded-[62px]" style={{ backgroundImage: "url('data:image/svg+xml;utf8,<svg viewBox=\\'0 0 124 124\\' xmlns=\\'http://www.w3.org/2000/svg\\' preserveAspectRatio=\\'none\\'><rect x=\\'0\\' y=\\'0\\' height=\\'100%\\' width=\\'100%\\' fill=\\'url(%23grad)\\' opacity=\\'1\\'/><defs><radialGradient id=\\'grad\\' gradientUnits=\\'userSpaceOnUse\\' cx=\\'0\\' cy=\\'0\\' r=\\'10\\' gradientTransform=\\'matrix(8.7681 0 0 8.7681 62 62)\\'><stop stop-color=\\'rgba(37,99,235,0.15)\\' offset=\\'0\\'/><stop stop-color=\\'rgba(37,99,235,0)\\' offset=\\'0.6\\'/></radialGradient></defs></svg>')" }} data-name="Gradient" />
-      <Background8 />
-      <Container20 />
-    </div>
-  );
-}
-
 function Blur() {
   return (
     <div className="absolute blur-[6px] content-stretch flex flex-col h-[81.88px] items-center left-0 opacity-40 top-[0.5px] w-[76.06px]" data-name="Blur">
@@ -611,8 +579,8 @@ function Container22() {
   return (
     <div className="content-stretch flex items-start justify-center relative shrink-0" data-name="Container">
       <Blur />
-      <div className="bg-clip-text flex flex-col font-['Inter:Extra_Bold',sans-serif] font-extrabold justify-center leading-[0] not-italic relative shrink-0 text-[78px] text-[transparent] text-center tracking-[-3.12px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(134.962deg, rgb(37, 99, 235) 0%, rgb(139, 92, 246) 100%)" }}>
-        <p className="leading-[81.9px]">AI</p>
+      <div className="bg-clip-text flex flex-col font-['Inter:Extra_Bold',sans-serif] font-extrabold justify-center not-italic relative shrink-0 text-[clamp(42px,8vw,78px)] text-[transparent] text-center tracking-[-0.04em] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(134.962deg, rgb(37, 99, 235) 0%, rgb(139, 92, 246) 100%)" }}>
+        <p className="leading-[1.05]">AI</p>
       </div>
     </div>
   );
@@ -620,9 +588,9 @@ function Container22() {
 
 function Container21() {
   return (
-    <div className="content-stretch flex items-start justify-center relative shrink-0" data-name="Container">
-      <div className="flex flex-col font-['Inter:Extra_Bold',sans-serif] font-extrabold justify-center leading-[0] not-italic relative shrink-0 text-[#64748b] text-[78px] text-center tracking-[-3.12px] whitespace-nowrap">
-        <p className="leading-[81.9px]">{`and what's `}</p>
+    <div className="content-stretch flex flex-wrap items-start justify-center relative shrink-0" data-name="Container">
+      <div className="flex flex-col font-['Inter:Extra_Bold',sans-serif] font-extrabold justify-center not-italic relative shrink-0 text-[#64748b] text-[clamp(42px,8vw,78px)] text-center tracking-[-0.04em] whitespace-nowrap">
+        <p className="leading-[1.05]">{`and what's `}</p>
       </div>
       <Container22 />
     </div>
@@ -631,9 +599,9 @@ function Container21() {
 
 function Heading() {
   return (
-    <div className="-translate-x-1/2 absolute content-stretch flex flex-col gap-[5.89px] items-center left-1/2 max-w-[900px] top-[104px]" data-name="Heading 1">
-      <div className="flex flex-col font-['Inter:Extra_Bold',sans-serif] font-extrabold justify-center leading-[0] not-italic relative shrink-0 text-[#0f172a] text-[78px] text-center tracking-[-3.12px] whitespace-nowrap">
-        <p className="leading-[81.9px]">{`Detect what's human`}</p>
+    <div className="content-stretch flex flex-col gap-2 items-center max-w-[900px] w-full px-4" data-name="Heading 1">
+      <div className="flex flex-col font-['Inter:Extra_Bold',sans-serif] font-extrabold justify-center leading-[1.02] not-italic relative shrink-0 text-[#0f172a] text-[clamp(42px,8vw,78px)] text-center tracking-[-0.04em] whitespace-normal">
+        <p className="leading-[1.05]">{`Detect what's human`}</p>
       </div>
       <Container21 />
     </div>
@@ -642,10 +610,9 @@ function Heading() {
 
 function Container23() {
   return (
-    <div className="-translate-x-1/2 absolute content-stretch flex flex-col items-center left-1/2 max-w-[600px] pb-[0.69px] top-[300.68px]" data-name="Container">
-      <div className="flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#475569] text-[18px] text-center whitespace-nowrap">
-        <p className="leading-[28.8px] mb-0">Analyze text, images, audio, and video with one intelligent verification</p>
-        <p className="leading-[28.8px]">platform.</p>
+    <div className="content-stretch flex flex-col items-center max-w-[600px] px-4 pb-[0.69px] w-full" data-name="Container">
+      <div className="flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center not-italic relative shrink-0 text-[#475569] text-[18px] text-center">
+        <p className="leading-[28.8px]">Analyze text, images, audio, and video with one intelligent verification platform.</p>
       </div>
     </div>
   );
@@ -675,7 +642,7 @@ function Container24() {
 
 function Margin() {
   return (
-    <div className="absolute content-stretch flex flex-col items-start left-[301px] pt-[8px] top-[387.38px]" data-name="Margin">
+    <div className="content-stretch flex flex-col items-center pt-[8px]" data-name="Margin">
       <Container24 />
     </div>
   );
@@ -683,8 +650,7 @@ function Margin() {
 
 function Container18() {
   return (
-    <div className="h-[446.38px] max-w-[780px] relative shrink-0 w-[780px]" data-name="Container">
-      <Container19 />
+    <div className="content-stretch flex flex-col items-center justify-center gap-8 max-w-[780px] relative shrink-0 w-full" data-name="Container">
       <Heading />
       <Container23 />
       <Margin />
@@ -696,7 +662,7 @@ function Container1() {
   return (
     <div className="min-h-[660px] relative shrink-0 w-full" data-name="Container">
       <div className="flex flex-row items-center justify-center min-h-[inherit] size-full">
-        <div className="content-stretch flex items-center justify-center min-h-[inherit] pb-[100px] pt-[140px] px-[40px] relative size-full">
+        <div className="content-stretch flex items-center justify-center min-h-[inherit] pb-[100px] pt-[140px] px-4 sm:px-[40px] relative size-full">
           <div className="absolute flex h-[241.204px] items-center justify-center left-[-22.52px] top-[38.89px] w-[283.038px]" style={{ "--transform-inner-width": "1183", "--transform-inner-height": "89" }}>
             <div className="-rotate-6 flex-none">
               <OverlayOverlayBlur />
@@ -796,7 +762,7 @@ function Link5() {
 
 function Container27() {
   return (
-    <div className="content-stretch flex gap-[36px] items-center relative shrink-0" data-name="Container">
+    <div className="content-stretch hidden gap-[36px] items-center relative shrink-0 md:flex" data-name="Container">
       <Link2 />
       <Link3 />
       <Link4 />
@@ -807,7 +773,7 @@ function Container27() {
 
 function Link6() {
   return (
-    <div className="bg-[#0f172a] content-stretch flex flex-col items-start px-[22px] py-[10px] relative rounded-[999px] shadow-[0px_4px_12px_0px_rgba(15,23,36,0.15)] shrink-0" data-name="Link">
+    <div className="bg-[#0f172a] content-stretch hidden flex-col items-start px-[22px] py-[10px] relative rounded-[999px] shadow-[0px_4px_12px_0px_rgba(15,23,36,0.15)] shrink-0 sm:flex" data-name="Link">
       <div className="flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">
         <p className="leading-[normal]">Support</p>
       </div>
@@ -817,7 +783,7 @@ function Link6() {
 
 function Nav() {
   return (
-    <div className="absolute backdrop-blur-[10px] bg-[rgba(255,255,255,0.75)] content-stretch flex items-center justify-between left-[14.29%] max-w-[1000px] pl-[24px] pr-[16.01px] py-[12px] right-[14.29%] rounded-[999px] top-[24px]" data-name="Nav">
+    <div className="absolute backdrop-blur-[10px] bg-[rgba(255,255,255,0.75)] content-stretch flex items-center justify-center sm:justify-between left-[14.29%] max-w-[1000px] px-[18px] sm:pl-[24px] sm:pr-[16.01px] py-[12px] right-[14.29%] rounded-[999px] top-[24px]" data-name="Nav">
       <div className="absolute inset-0 pointer-events-none rounded-[999px] shadow-[0px_8px_24px_-4px_rgba(15,23,36,0.06)]" data-name="Nav:shadow">
         <div aria-hidden="true" className="absolute bg-[rgba(255,255,255,0)] inset-0 rounded-[999px]" />
         <div className="absolute inset-0 rounded-[inherit] shadow-[inset_0px_1px_1px_0px_white,inset_0px_0px_0px_1px_rgba(15,23,36,0.06)]" />

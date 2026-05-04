@@ -8,7 +8,11 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 ARG VITE_API_BASE_URL=http://localhost:8000
+ARG VITE_MAIN_BACKEND_URL=http://localhost:8000
+ARG VITE_ML_SERVICE_URL=http://localhost:9000
 ENV VITE_API_BASE_URL=${VITE_API_BASE_URL}
+ENV VITE_MAIN_BACKEND_URL=${VITE_MAIN_BACKEND_URL}
+ENV VITE_ML_SERVICE_URL=${VITE_ML_SERVICE_URL}
 RUN npm run build
 
 FROM node:22-alpine AS runner

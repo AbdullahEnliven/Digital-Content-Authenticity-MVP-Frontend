@@ -107,8 +107,8 @@ export default function ContactPage() {
                   <textarea className="min-h-[180px] rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-950 outline-none transition focus:border-blue-300 focus:ring-4 focus:ring-blue-100" placeholder="Tell us what you need." />
                 </label>
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                  <button type="button" className="inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-b from-blue-500 to-blue-600 px-8 py-4 text-sm font-semibold text-white shadow-[0_18px_36px_-16px_rgba(37,99,235,0.55)]">
-                    Send message
+                  <button type="button" className="inline-flex w-full min-w-[148px] items-center justify-center whitespace-nowrap rounded-full bg-gradient-to-b from-blue-500 to-blue-600 px-8 py-4 text-sm font-semibold text-white shadow-[0_18px_36px_-16px_rgba(37,99,235,0.55)] sm:w-auto">
+                    Send Message
                   </button>
                   <p className="max-w-sm text-sm leading-6 text-slate-500">No automated submission is configured yet, so this button is intentionally UI-only.</p>
                 </div>

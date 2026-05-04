@@ -10,7 +10,7 @@ function Field({ label, value }) {
   return (
     <div className="tv-card tv-card-pad tv-card-soft">
       <div className="tv-muted" style={{ fontSize: 12 }}>{label}</div>
-      <div style={{ marginTop: 6, fontWeight: 800 }}>{value}</div>
+      <div style={{ marginTop: 6, fontWeight: 800, overflowWrap: 'anywhere', lineHeight: 1.45 }}>{value}</div>
     </div>
   )
 }
@@ -119,15 +119,7 @@ export default function CertificatePage() {
             <div className="tv-grid-2">
               <Field label="Trust Level" value={verificationResult.trust_classification || '-'} />
               <Field label="Verification Status" value={verificationResult.verification_status || '-'} />
-              <Field label="Verification Code" value={certificate?.verification_code || 'Generating...'} />
               <Field label="Issued Date" value={certificate?.created_at ? new Date(certificate.created_at).toLocaleString() : 'Generating...'} />
-            </div>
-
-            <div className="tv-card tv-card-pad tv-card-soft" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 14, flexWrap: 'wrap' }}>
-              <div>
-                <div className="tv-muted" style={{ fontSize: 12 }}>Share Path</div>
-                <div style={{ marginTop: 6, fontWeight: 800, color: 'var(--tv-text-muted)' }}>Coming soon</div>
-              </div>
             </div>
           </div>
         </DashboardCard>

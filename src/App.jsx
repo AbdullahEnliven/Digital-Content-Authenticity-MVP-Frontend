@@ -2,6 +2,41 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 
 export const AppContext = createContext(null)
 
+const MAIN_BACKEND_URL =
+  process.env.NEXT_PUBLIC_MAIN_BACKEND_URL ||
+  process.env.NEXT_PUBLIC_API_BASE_URL ||
+  process.env.VITE_MAIN_BACKEND_URL ||
+  process.env.VITE_API_BASE_URL ||
+  'http://localhost:8000'
+const ML_SERVICE_URL = process.env.NEXT_PUBLIC_ML_SERVICE_URL || process.env.VITE_ML_SERVICE_URL || 'http://localhost:9000'
+
+function buildHealthUrl(baseUrl) {
+  if (!baseUrl) return null
+  return `${baseUrl.replace(/\/$/, '')}/health`
+}
+
+async function warmUpServices() {
+  try {
+    const healthUrls = [buildHealthUrl(MAIN_BACKEND_URL), buildHealthUrl(ML_SERVICE_URL)].filter(Boolean)
+
+    const results = await Promise.allSettled(
+      healthUrls.map((url) =>
+        fetch(url, {
+          method: 'GET',
+          mode: 'cors',
+          cache: 'no-store',
+        }),
+      ),
+    )
+
+    if (process.env.NODE_ENV === 'development') {
+      console.log('%cWarm-up results:', 'color:#B3945B', results)
+    }
+  } catch {
+    // Silent warm-up failure.
+  }
+}
+
 export function useApp() {
   return useContext(AppContext)
 }
@@ -46,6 +81,10 @@ export function AppProvider({ children, api }) {
   const [theme, setTheme] = useState('light')
   const [toasts, setToasts] = useState([])
   const [isHydrated, setIsHydrated] = useState(false)
+
+  useEffect(() => {
+    warmUpServices()
+  }, [])
 
   useEffect(() => {
     setUser(readStoredJson('tv-user'))

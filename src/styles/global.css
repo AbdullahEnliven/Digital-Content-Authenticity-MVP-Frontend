@@ -49,11 +49,13 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent 26%),
     linear-gradient(180deg, var(--tv-bg-accent) 0%, var(--tv-bg) 26%, var(--tv-bg) 100%);
@@ -71,6 +73,7 @@ input,
 textarea,
 select {
   font: inherit;
+  max-width: 100%;
 }
 
 button {
@@ -133,6 +136,8 @@ button {
 .tv-page {
   display: flex;
   min-height: 100vh;
+  width: 100%;
+  min-width: 0;
 }
 
 .tv-sidebar {
@@ -278,6 +283,7 @@ button {
 }
 
 .tv-card {
+  min-width: 0;
   background: var(--tv-surface);
   border: 1px solid var(--tv-border);
   border-radius: 18px;
@@ -298,6 +304,11 @@ button {
   justify-content: space-between;
   gap: 16px;
   flex-wrap: wrap;
+  min-width: 0;
+}
+
+.tv-page-header > div {
+  min-width: 0;
 }
 
 .tv-page-title {
@@ -319,12 +330,16 @@ button {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  max-width: 100%;
   min-height: 44px;
   padding: 10px 18px;
   border-radius: 10px;
   border: 1px solid transparent;
   font-size: 14px;
   font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
   transition: 0.2s ease;
 }
 
@@ -578,6 +593,10 @@ button {
     margin-left: 0;
   }
 
+  .tv-main-inner {
+    padding-bottom: 96px;
+  }
+
   .tv-mobile-tabbar {
     position: fixed;
     right: 12px;
@@ -613,8 +632,37 @@ button {
     padding-right: 16px;
   }
 
+  .tv-page-header {
+    align-items: stretch;
+  }
+
+  .tv-page-header > div:last-child {
+    width: 100%;
+  }
+
+  .tv-page-header > div:last-child .tv-btn {
+    flex: 1 1 180px;
+  }
+
   .tv-grid-4 {
     grid-template-columns: 1fr;
+  }
+
+  .tv-grid-3,
+  .tv-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .tv-card,
+  .tv-card-pad {
+    overflow-wrap: anywhere;
+  }
+
+  .tv-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
   }
 
   .tv-table th:nth-child(2),
